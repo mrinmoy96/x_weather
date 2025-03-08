@@ -1,7 +1,15 @@
 
 import React, { useState } from "react";
+import "./WeatherApp.css";
 import axios from "axios";
-import "./WeatherApp.css"
+
+
+// const axios = require("axios");
+
+
+
+
+// jest.mock("axios");
 
 const WeatherApp = () => {
   const [city, setCity] = useState("");
@@ -28,10 +36,11 @@ const WeatherApp = () => {
     }
     setLoading(false);
   };
-
+// 1 className="flex flex-col items-center justify-center min-h-screen bg-blue-100 p-4"
+//2 flex space-x-2 mb-4
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 p-4">
-      <div className="flex space-x-2 mb-4 search-box">
+     <div > 
+      <div className=" search-box">
         <input
           type="text"
           value={city}
@@ -48,22 +57,23 @@ const WeatherApp = () => {
       </div>
 
       {loading && <p>Loading data...</p>}
-
+      {/* 1 grid grid-cols-2 gap-4 p-4 bg-white shadow-lg rounded-md */}
+      {/*2 p-4 border rounded-md */}
       {weather && (
-        <div className="weather-info grid grid-cols-2 gap-4 p-4 bg-white shadow-lg rounded-md">
-          <div className="weather-card p-4 border rounded-md">
+        <div className="weather-cards">
+          <div className="weather-card ">
             <h2 className="text-lg font-bold">Temperature</h2>
             <p>{weather.current.temp_c}°C</p>
           </div>
-          <div className="weather-card p-4 border rounded-md">
+          <div className="weather-card ">
             <h2 className="text-lg font-bold">Humidity</h2>
             <p>{weather.current.humidity}%</p>
           </div>
-          <div className="weather-card p-4 border rounded-md">
+          <div className="weather-card ">
             <h2 className="text-lg font-bold">Condition</h2>
             <p>{weather.current.condition.text}</p>
           </div>
-          <div className="weather-card p-4 border rounded-md">
+          <div className="weather-card ">
             <h2 className="text-lg font-bold">Wind Speed</h2>
             <p>{weather.current.wind_kph} kph</p>
           </div>

@@ -47,7 +47,7 @@ body {
     background-color: #218838;
 }
 
-.weather-info {
+.weather-cards {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
@@ -65,7 +65,7 @@ body {
 	height: 70px;
 }
 
-.weather-card h3 {
+.weather-card h2 {
     margin: 0;
     font-size: 18px;
     color: #333;
